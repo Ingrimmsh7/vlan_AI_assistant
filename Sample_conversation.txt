@@ -1,0 +1,277 @@
+============================================================
+🌐 VLAN ISLANDS AI ASSISTANT
+============================================================
+Hello! I'm your AI network assistant specialized in VLAN troubleshooting.
+I've analyzed your network and detected several VLAN islands.
+
+You can ask me questions like:
+• 'What VLAN islands were detected?'
+• 'How can I fix the WiFi VLANs?'
+• 'Show me Cisco commands for VLAN 30'
+• 'What are the most critical issues?'
+
+Type 'help' for more options or 'exit' to quit.
+------------------------------------------------------------
+
+🤔 You: What VLAN islands were detected?
+🤖 AI Assistant: The detected VLAN islands from the current network analysis are as follows:
+
+### CRITICAL VLAN ISLAND ISSUES:
+
+1. **VLAN 30 (WiFi-Corporate)**: 19 islands
+   - Core island: `['core-sw-01', 'core-sw-02', 'wifi-controller-01', 'wifi-controller-02']`
+   - 18 individual isolated devices.
+
+2. **VLAN 31 (WiFi-Guest)**: 19 islands
+   - Core island: `['core-sw-01', 'core-sw-02', 'wifi-controller-01', 'wifi-controller-02']`
+   - 18 individual isolated devices.
+
+### MINOR VLAN ISLAND ISSUES:
+
+1. **VLAN 1 (Default)**: 2 islands
+   - Island 1: `['acc-sw-a-floor1-01', 'acc-sw-a-floor1-02', 'acc-sw-a-floor1-03', 'acc-sw-a-floor2-01', 'acc-sw-a-floor2-02', 'acc-sw-a-floor2-03', 'acc-sw-a-floor3-01', 'acc-sw-a-floor3-02', 'acc-sw-b-floor1-01', 'acc-sw-b-floor1-02', 'acc-sw-b-floor1-03', 'acc-sw-b-floor2-01', 'acc-sw-b-floor2-02', 'acc-sw-b-floor2-03', 'acc-sw-b-floor3-01', 'acc-sw-b-floor3-02', 'acc-sw-c-floor1-01', 'acc-sw-c-floor1-02', 'acc-sw-c-floor1-03', 'acc-sw-c-floor2-01', 'acc-sw-c-floor2-02', 'acc-sw-c-floor2-03', 'acc-sw-c-floor3-01', 'acc-sw-c-floor3-02', 'core-sw-01', 'core-sw-02', 'dist-sw-bldg-a-01', 'dist-sw-bldg-a-02', 'dist-sw-bldg-b-01', 'dist-sw-bldg-b-02', 'dist-sw-bldg-c-01', 'dist-sw-bldg-c-02', 'storage-sw-01', 'storage-sw-02']`
+   - Island 2: `['dmz-sw-01', 'dmz-sw-02']`
+
+2. **VLAN 201 (Printers-B)**: 2 islands
+   - Island 1: `['acc-sw-b-floor1-01', 'dist-sw-bldg-b-01']`
+   - Island 2: `['acc-sw-b-floor2-01']`
+
+3. **VLAN 300 (IoT-Bldg-A)**: 2 islands
+   - Island 1: `['acc-sw-a-floor1-03']`
+   - Island 2: `['acc-sw-a-floor2-03']`
+
+4. **VLAN 301 (IoT-Bldg-B)**: 2 islands
+   - Island 1: `['acc-sw-b-floor2-03']`
+   - Island 2: `['acc-sw-b-floor3-02']`
+
+5. **VLAN 400 (Security-Cameras-A)**: 2 islands
+   - Island 1: `['acc-sw-a-floor3-02']`
+   - Island 2: `['acc-sw-a-floor1-02', 'dist-sw-bldg-a-01']`
+
+6. **VLAN 401 (Security-Cameras-B)**: 2 islands
+   - Island 1: `['acc-sw-b-floor1-03']`
+   - Island 2: `['dist-sw-bldg-b-02']`
+
+7. **VLAN 402 (Security-Cameras-C)**: 2 islands
+   - Island 1: `['acc-sw-c-floor2-03']`
+   - Island 2: `['acc-sw-c-floor3-01']`
+
+Overall, there are 9 VLANs across 52 islands with critical issues in VLAN 30 and VLAN 31, while several other VLANs experience minor fragmentation.  
+
+🤔 You: How can I fix the WiFi VLANs?
+🤖 AI Assistant: To resolve the fragmentation issues in the WiFi VLANs (VLAN 30 for Corporate and VLAN 31 for Guest), it is important to ensure proper connectivity between access points (APs) and the wireless controllers. Below are the actionable steps you can take:
+
+### Step 1: Verify Access Point and Controller Configuration
+
+1. **Access Point Configuration**:
+   - Ensure that the APs are configured to use the respective VLAN. This typically means that each AP should have its management interface assigned to the VLAN it serves.
+   - Check the configuration of each AP to ensure they are connected to the correct ports.
+
+   ```bash
+   show running-config interface <interface-id>
+   ```
+
+2. **Wireless Controller Configuration**:
+   - Ensure the wireless controller has the correct settings for both VLANs and is set to manage the APs effectively.
+
+### Step 2: Configure VLAN Trunking on Access Switches
+
+Ensure the access switches connecting to APs are configured as trunk ports so that they can carry traffic for both VLANs (30 and 31). Follow these CLI steps:
+
+1. **Identify the Ports**:
+   Determine which ports on the access switches are connected to the APs.
+
+2. **Configure the Ports**:
+   Access each switch and enter configuration mode for the relevant interfaces.
+
+   ```bash
+   enable
+   configure terminal
+   interface <interface-id>  # For example, interface GigabitEthernet0/1
+   switchport mode trunk
+   switchport trunk allowed vlan 30,31  # Allow both WiFi VLANs
+   exit
+   ```
+
+3. **Verify Trunk Configuration**:
+   Make sure the trunking configuration is correct.
+
+   ```bash
+   show interfaces trunk
+   ```
+
+### Step 3: Verify Spanning Tree Protocol (STP) Configuration
+
+1. **Check STP Configuration**:
+   Ensure that STP is not blocking any VLANs that could affect connectivity. Check what state the ports are in.
+
+   ```bash
+   show spanning-tree
+   ```
+
+2. **Adjust STP Settings If Necessary**:
+   If certain VLANs are being blocked, you may need to adjust STP to allow VLAN traffic through.
+
+### Step 4: Monitoring and Testing
+
+
+1. **Monitor Connectivity**:
+   After making configuration changes, continuously monitor the islands by checking the connectivity on VLAN 30 and VLAN 31.
+
+   ```bash
+   show vlan brief
+   ```
+
+2. **Testing AP Connectivity**:
+   ```
+
+2. **Testing AP Connectivity**:
+2. **Testing AP Connectivity**:
+   Use the following command to verify if the APs are reachable from the controllers:
+
+   ```bash
+   ping <AP_IP_Address>
+   ```
+
+### Step 5: Review and Document Changes
+
+After changes have been made, it’s crucial to document them for audit and troubleshooting purposes.
+
+### Key Considerations:
+- Ensure security implications are considered; unauthorized devices should not be allowed on these VLANs.
+- Consider VLAN pruning on trunks if there are other VLANs not needed.
+- Be cautious with notifications and configurations that require downtime or intensive changes, and plan accordingly to minimize any operational impact.
+
+By following these steps, you can establish better connectivity for your WiFi VLANs, ultimately minimizing fragmentation. If modifications have not resolved the issue, further investigation on the underlying physical connections or specific device configurations might be necessary.
+
+🤔 You: What Security vulnerabilities do you see in the networks?
+🤖 AI Assistant: Based on the analysis of VLAN islands and the overall network configuration, several potential security vulnerabilities can be identified:
+
+### 1. **Fragmented VLANs**
+
+- **Risk**: Heavily fragmented VLANs, such as VLANs 30 (WiFi-Corporate) and 31 (WiFi-Guest), suggest that access points (APs) may not be properly connected to the wireless controllers. This situation can lead to an inability for network administrators to effectively manage and monitor these devices.
+
+- **Mitigation**: Ensure that VLANs are properly configured and that devices are correctly connected. This includes verifying trunk configurations and ensuring no additional security vulnerabilities arise from misconfiguration.
+
+### 2. **Inadequate VLAN Segmentation**
+
+- **Risk**: The Default VLAN (VLAN 1) having many islands indicates that critical infrastructure, such as DMZ switches (`dmz-sw-01`, `dmz-sw-02`), is not isolated effectively. Inadequate segmentation could allow attackers to move laterally across the network.
+
+- **Mitigation**: Implement stricter VLAN segmentation policies, ensuring that sensitive systems (like DMZs, corporate networks, and guest networks) are kept separate. Using dedicated VLANs for different services increases security and reduces the attack surface.
+
+### 3. **Potential for VLAN Hopping Attacks**
+
+- **Risk**: The presence of multiple VLANs and fragmented islands may provide an avenue for VLAN hopping attacks, where an attacker exercises unauthorized access to VLANs by exploiting switch misconfigurations.
+
+- **Mitigation**:
+  - Ensure that ports connecting end devices are set to access mode with specific VLAN assignments, preventing them from being set to trunk mode.    
+  - Deploy 802.1Q tunneling safeguards and, if available, enable features like DHCP snooping and dynamic ARP inspection to guard against these attack vectors.
+
+### 4. **Minimal Monitoring/Logging**
+
+- **Risk**: Insufficient logging and monitoring could lead to unobserved incidents, performance issues, or unauthorized access.
+
+- **Mitigation**: Implement a centralized logging solution (like Syslog) to monitor the status of network devices. Additionally, consider monitoring tools capable of visualizing network topology and detecting anomalies.
+
+### 5. **Access Control List (ACL) Configuration**
+
+- **Risk**: If ACLs are not configured or improperly assigned to interfaces, unauthorized access to sensitive VLANs can occur, allowing users from less secure or guest networks to access corporate resources.
+
+- **Mitigation**: Review and implement strict ACLs that limit access based on roles or requirements. Ensure proper “deny” rules are used at the end of each ACL to restrict unapproved access.
+
+### 6. **Uncontrolled Broadcast Traffic**
+
+- **Risk**: Although not immediately visible through the detected islands, uncontrolled broadcast traffic can lead to network congestion and expose devices to broadcast storms.
+
+- **Mitigation**: Implement storm control on switch ports and ensure proper Spanning Tree Protocol (STP) configurations are in place to minimize the potential for broadcast storms.
+
+### 7. **Weak Authentication for Wireless Access Points**
+
+- **Risk**: If the security configuration for the wireless networks (VLAN 30 and VLAN 31) is weak (e.g., WEP or no encryption), it could lead to unauthorized access and data exposure.
+
+- **Mitigation**: Ensure that wireless networks use strong authentication methods (like WPA3) and robust encryption protocols. Implement a guest portal for VLAN 31 to control access more effectively.
+
+### Conclusion
+
+Addressing these vulnerabilities requires a comprehensive approach that involves revisiting existing configurations, enhancing security measures, and ensuring adequate monitoring. Regular penetration testing and vulnerability assessments should also be conducted to proactively identify and remedy any potential security risks to maintain a secure enterprise network environment.
+
+🤔 You: With which device should I start improving the VLAN?
+🤖 AI Assistant: To improve the VLAN configuration and address the current issues, you should start with the **core switches** (`core-sw-01` and `core-sw-02`). As the backbone of the network, core switches play a crucial role in managing VLAN traffic across the entire network and their configurations directly impact the performance and security of all connected VLANs.
+
+### Steps to Improve VLAN Configuration on Core Switches:
+
+1. **Audit the Current Configuration**:
+   - Start by checking the existing VLAN configurations on both core switches. Look for misconfigurations, unintended VLANs, and trunks.
+   - Use the following command:
+
+   ```bash
+   show running-config
+   ```
+
+2. **Verify Trunk Configuration**:
+   - Ensure that the trunk ports are set up correctly between core switches and distribution/access switches. Confirm that the appropriate VLANs (especially VLAN 30 and VLAN 31) are allowed across the trunk.
+
+   ```bash
+   show interfaces trunk
+   ```
+
+   If needed, configure the trunk ports:
+
+   ```bash
+   interface <interface-id>
+   switchport mode trunk
+   switchport trunk allowed vlan 30,31  # Include other necessary VLANs
+   ```
+
+3. **Check Spanning Tree Protocol (STP)**:
+   - Verify that STP is properly configured to prevent any loops and ensure that the appropriate VLANs are forwarding traffic.
+
+   ```bash
+   show spanning-tree
+   ```
+
+4. **Examine VLAN Members**:
+   - Ensure that VLAN members (port assignments) reflect the desired topology and that there are no islands formed by misconfigured ports.
+
+   ```bash
+   show vlan brief
+   ```
+
+5. **Implement Access Control Lists (ACLs)**:
+   - Review and implement ACLs on the core switches to restrict traffic for sensitive VLANs and ensure proper segmentation between VLANs.
+
+6. **Enhance Security Features**:
+   - Enable security features such as DHCP Snooping, Dynamic ARP Inspection, and port security on core switch ports to prevent unauthorized access and attacks.
+
+7. **Monitor VLAN Performance**:
+   - Use monitoring tools to visualize VLAN performance and identify any anomalies or issues post-configuration changes.
+
+8. **Document Changes**:
+   - It’s essential to document any modifications made during this process for future reference, audits, and troubleshooting.
+
+### Why Start with Core Switches?
+
+- **Central Role**: Core switches handle the majority of routing and switching traffic in your enterprise network, and they directly affect the performance and reliability of all connected devices.
+- **Direct Control**: They provide direct control over VLAN management, allowing you to enforce policies and configurations that dictate how VLANs communicate across the network.
+- **Impact**: Improving configurations and security at the core level leads to positive cascading effects down the hierarchy (distribution and access layers).
+
+By starting with core switches, you set a strong foundation for overall network stability, performance, and security as you continue to improve VLAN configurations throughout the rest of your environment.
+
+🤔 You: help
+
+📚 HELP MENU
+----------------------------------------
+COMMANDS:
+• help     - Show this menu
+• report   - Show quick VLAN summary
+• clear    - Clear screen
+• exit     - Quit the assistant
+
+SAMPLE QUESTIONS:
+• What VLAN islands were detected?
+• How critical are the WiFi VLAN issues?
+• Show me commands to fix VLAN 30
+• What's wrong with the security cameras?
+• How do I resolve the Default VLAN islands?
+• Explain the network topology issues
+• What should I prioritize first?

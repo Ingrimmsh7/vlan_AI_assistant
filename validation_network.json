@@ -1,0 +1,183 @@
+{
+  "devices": [
+    {
+      "id": "core-sw-01",
+      "type": "switch",
+      "role": "core",
+      "location": "datacenter"
+    },
+    {
+      "id": "core-sw-02",
+      "type": "switch",
+      "role": "core",
+      "location": "datacenter"
+    },
+    {
+      "id": "dist-sw-bldg-a",
+      "type": "switch",
+      "role": "distribution",
+      "location": "building-a"
+    },
+    {
+      "id": "dist-sw-bldg-b",
+      "type": "switch",
+      "role": "distribution",
+      "location": "building-b"
+    },
+    {
+      "id": "acc-sw-a-floor1",
+      "type": "switch",
+      "role": "access",
+      "location": "building-a-floor1"
+    },
+    {
+      "id": "acc-sw-a-floor2",
+      "type": "switch",
+      "role": "access",
+      "location": "building-a-floor2"
+    },
+    {
+      "id": "acc-sw-b-floor1",
+      "type": "switch",
+      "role": "access",
+      "location": "building-b-floor1"
+    },
+    {
+      "id": "acc-sw-b-floor2",
+      "type": "switch",
+      "role": "access",
+      "location": "building-b-floor2"
+    },
+    {
+      "id": "wifi-controller",
+      "type": "controller",
+      "role": "wireless",
+      "location": "datacenter"
+    },
+    {
+      "id": "ap-a-01",
+      "type": "access_point",
+      "role": "wireless",
+      "location": "building-a-floor1"
+    },
+    {
+      "id": "ap-a-02",
+      "type": "access_point",
+      "role": "wireless",
+      "location": "building-a-floor2"
+    },
+    {
+      "id": "ap-b-01",
+      "type": "access_point",
+      "role": "wireless",
+      "location": "building-b-floor1"
+    },
+    {
+      "id": "ap-b-02",
+      "type": "access_point",
+      "role": "wireless",
+      "location": "building-b-floor2"
+    }
+  ],
+  "links": [
+    {
+      "source": "core-sw-01",
+      "target": "core-sw-02",
+      "type": "ethernet",
+      "speed": "40G"
+    },
+    {
+      "source": "core-sw-01",
+      "target": "dist-sw-bldg-a",
+      "type": "ethernet",
+      "speed": "10G"
+    },
+    {
+      "source": "core-sw-02",
+      "target": "dist-sw-bldg-b",
+      "type": "ethernet",
+      "speed": "10G"
+    },
+    {
+      "source": "dist-sw-bldg-a",
+      "target": "acc-sw-a-floor1",
+      "type": "ethernet",
+      "speed": "1G"
+    },
+    {
+      "source": "dist-sw-bldg-a",
+      "target": "acc-sw-a-floor2",
+      "type": "ethernet",
+      "speed": "1G"
+    },
+    {
+      "source": "acc-sw-b-floor1",
+      "target": "acc-sw-b-floor2",
+      "type": "ethernet",
+      "speed": "1G"
+    },
+    {
+      "source": "core-sw-01",
+      "target": "wifi-controller",
+      "type": "ethernet",
+      "speed": "1G"
+    },
+    {
+      "source": "acc-sw-a-floor1",
+      "target": "ap-a-01",
+      "type": "ethernet",
+      "speed": "1G"
+    }
+  ],
+  "vlans": [
+    {
+      "id": 1,
+      "name": "Default",
+      "description": "Default management VLAN",
+      "devices": [
+        "core-sw-01",
+        "core-sw-02",
+        "dist-sw-bldg-a",
+        "dist-sw-bldg-b",
+        "acc-sw-a-floor1",
+        "acc-sw-a-floor2",
+        "acc-sw-b-floor1",
+        "acc-sw-b-floor2"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "WiFi-Corporate",
+      "description": "Corporate wireless network",
+      "devices": [
+        "core-sw-01",
+        "core-sw-02",
+        "wifi-controller",
+        "ap-a-01",
+        "ap-a-02",
+        "ap-b-01",
+        "ap-b-02"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "User-VLAN-A",
+      "description": "User network for Building A",
+      "devices": [
+        "dist-sw-bldg-a",
+        "acc-sw-a-floor1",
+        "acc-sw-a-floor2"
+      ]
+    },
+    {
+      "id": 200,
+      "name": "User-VLAN-B",
+      "description": "User network for Building B",
+      "devices": [
+        "dist-sw-bldg-b",
+        "acc-sw-b-floor1",
+        "acc-sw-b-floor2"
+      ]
+    }
+  ]
+}

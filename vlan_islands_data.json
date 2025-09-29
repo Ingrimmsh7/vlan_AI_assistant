@@ -1,0 +1,401 @@
+{
+  "devices": [
+    {"id": "core-sw-01", "type": "switch", "role": "core", "location": "datacenter"},
+    {"id": "core-sw-02", "type": "switch", "role": "core", "location": "datacenter"},
+    {"id": "dist-sw-bldg-a-01", "type": "switch", "role": "distribution", "location": "building-a"},
+    {"id": "dist-sw-bldg-a-02", "type": "switch", "role": "distribution", "location": "building-a"},
+    {"id": "dist-sw-bldg-b-01", "type": "switch", "role": "distribution", "location": "building-b"},
+    {"id": "dist-sw-bldg-b-02", "type": "switch", "role": "distribution", "location": "building-b"},
+    {"id": "dist-sw-bldg-c-01", "type": "switch", "role": "distribution", "location": "building-c"},
+    {"id": "dist-sw-bldg-c-02", "type": "switch", "role": "distribution", "location": "building-c"},
+    {"id": "router-01", "type": "router", "role": "edge", "location": "datacenter"},
+    {"id": "router-02", "type": "router", "role": "edge", "location": "datacenter"},
+    {"id": "acc-sw-a-floor1-01", "type": "switch", "role": "access", "location": "building-a-floor1"},
+    {"id": "acc-sw-a-floor1-02", "type": "switch", "role": "access", "location": "building-a-floor1"},
+    {"id": "acc-sw-a-floor1-03", "type": "switch", "role": "access", "location": "building-a-floor1"},
+    {"id": "acc-sw-a-floor2-01", "type": "switch", "role": "access", "location": "building-a-floor2"},
+    {"id": "acc-sw-a-floor2-02", "type": "switch", "role": "access", "location": "building-a-floor2"},
+    {"id": "acc-sw-a-floor2-03", "type": "switch", "role": "access", "location": "building-a-floor2"},
+    {"id": "acc-sw-a-floor3-01", "type": "switch", "role": "access", "location": "building-a-floor3"},
+    {"id": "acc-sw-a-floor3-02", "type": "switch", "role": "access", "location": "building-a-floor3"},
+    {"id": "acc-sw-b-floor1-01", "type": "switch", "role": "access", "location": "building-b-floor1"},
+    {"id": "acc-sw-b-floor1-02", "type": "switch", "role": "access", "location": "building-b-floor1"},
+    {"id": "acc-sw-b-floor1-03", "type": "switch", "role": "access", "location": "building-b-floor1"},
+    {"id": "acc-sw-b-floor2-01", "type": "switch", "role": "access", "location": "building-b-floor2"},
+    {"id": "acc-sw-b-floor2-02", "type": "switch", "role": "access", "location": "building-b-floor2"},
+    {"id": "acc-sw-b-floor2-03", "type": "switch", "role": "access", "location": "building-b-floor2"},
+    {"id": "acc-sw-b-floor3-01", "type": "switch", "role": "access", "location": "building-b-floor3"},
+    {"id": "acc-sw-b-floor3-02", "type": "switch", "role": "access", "location": "building-b-floor3"},
+    {"id": "acc-sw-c-floor1-01", "type": "switch", "role": "access", "location": "building-c-floor1"},
+    {"id": "acc-sw-c-floor1-02", "type": "switch", "role": "access", "location": "building-c-floor1"},
+    {"id": "acc-sw-c-floor1-03", "type": "switch", "role": "access", "location": "building-c-floor1"},
+    {"id": "acc-sw-c-floor2-01", "type": "switch", "role": "access", "location": "building-c-floor2"},
+    {"id": "acc-sw-c-floor2-02", "type": "switch", "role": "access", "location": "building-c-floor2"},
+    {"id": "acc-sw-c-floor2-03", "type": "switch", "role": "access", "location": "building-c-floor2"},
+    {"id": "acc-sw-c-floor3-01", "type": "switch", "role": "access", "location": "building-c-floor3"},
+    {"id": "acc-sw-c-floor3-02", "type": "switch", "role": "access", "location": "building-c-floor3"},
+    {"id": "dmz-sw-01", "type": "switch", "role": "access", "location": "dmz"},
+    {"id": "dmz-sw-02", "type": "switch", "role": "access", "location": "dmz"},
+    {"id": "wifi-controller-01", "type": "controller", "role": "wifi", "location": "datacenter"},
+    {"id": "wifi-controller-02", "type": "controller", "role": "wifi", "location": "datacenter"},
+    {"id": "ap-a-floor1-01", "type": "access-point", "role": "wifi", "location": "building-a-floor1"},
+    {"id": "ap-a-floor1-02", "type": "access-point", "role": "wifi", "location": "building-a-floor1"},
+    {"id": "ap-a-floor2-01", "type": "access-point", "role": "wifi", "location": "building-a-floor2"},
+    {"id": "ap-a-floor2-02", "type": "access-point", "role": "wifi", "location": "building-a-floor2"},
+    {"id": "ap-a-floor3-01", "type": "access-point", "role": "wifi", "location": "building-a-floor3"},
+    {"id": "ap-a-floor3-02", "type": "access-point", "role": "wifi", "location": "building-a-floor3"},
+    {"id": "ap-b-floor1-01", "type": "access-point", "role": "wifi", "location": "building-b-floor1"},
+    {"id": "ap-b-floor1-02", "type": "access-point", "role": "wifi", "location": "building-b-floor1"},
+    {"id": "ap-b-floor2-01", "type": "access-point", "role": "wifi", "location": "building-b-floor2"},
+    {"id": "ap-b-floor2-02", "type": "access-point", "role": "wifi", "location": "building-b-floor2"},
+    {"id": "ap-b-floor3-01", "type": "access-point", "role": "wifi", "location": "building-b-floor3"},
+    {"id": "ap-b-floor3-02", "type": "access-point", "role": "wifi", "location": "building-b-floor3"},
+    {"id": "ap-c-floor1-01", "type": "access-point", "role": "wifi", "location": "building-c-floor1"},
+    {"id": "ap-c-floor1-02", "type": "access-point", "role": "wifi", "location": "building-c-floor1"},
+    {"id": "ap-c-floor2-01", "type": "access-point", "role": "wifi", "location": "building-c-floor2"},
+    {"id": "ap-c-floor2-02", "type": "access-point", "role": "wifi", "location": "building-c-floor2"},
+    {"id": "ap-c-floor3-01", "type": "access-point", "role": "wifi", "location": "building-c-floor3"},
+    {"id": "ap-c-floor3-02", "type": "access-point", "role": "wifi", "location": "building-c-floor3"},
+    {"id": "storage-sw-01", "type": "switch", "role": "storage", "location": "datacenter"},
+    {"id": "storage-sw-02", "type": "switch", "role": "storage", "location": "datacenter"}
+  ],
+  "links": [
+    {"source": "core-sw-01", "target": "core-sw-02", "type": "ethernet", "speed": "40G"},
+    {"source": "core-sw-01", "target": "router-01", "type": "ethernet", "speed": "40G"},
+    {"source": "core-sw-02", "target": "router-02", "type": "ethernet", "speed": "40G"},
+    {"source": "router-01", "target": "router-02", "type": "ethernet", "speed": "10G"},
+    
+    {"source": "core-sw-01", "target": "dist-sw-bldg-a-01", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-02", "target": "dist-sw-bldg-a-02", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-01", "target": "dist-sw-bldg-b-01", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-02", "target": "dist-sw-bldg-b-02", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-01", "target": "dist-sw-bldg-c-01", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-02", "target": "dist-sw-bldg-c-02", "type": "ethernet", "speed": "10G"},
+    
+    {"source": "dist-sw-bldg-a-01", "target": "dist-sw-bldg-a-02", "type": "ethernet", "speed": "10G"},
+    {"source": "dist-sw-bldg-b-01", "target": "dist-sw-bldg-b-02", "type": "ethernet", "speed": "10G"},
+    {"source": "dist-sw-bldg-c-01", "target": "dist-sw-bldg-c-02", "type": "ethernet", "speed": "10G"},
+    
+    {"source": "dist-sw-bldg-a-01", "target": "acc-sw-a-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-02", "target": "acc-sw-a-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-01", "target": "acc-sw-a-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-02", "target": "acc-sw-a-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-01", "target": "acc-sw-a-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-02", "target": "acc-sw-a-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-01", "target": "acc-sw-a-floor2-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-01", "target": "acc-sw-a-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-a-02", "target": "acc-sw-a-floor3-02", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "dist-sw-bldg-b-01", "target": "acc-sw-b-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-02", "target": "acc-sw-b-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-01", "target": "acc-sw-b-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-02", "target": "acc-sw-b-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-01", "target": "acc-sw-b-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-02", "target": "acc-sw-b-floor2-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-01", "target": "acc-sw-b-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-b-02", "target": "acc-sw-b-floor3-02", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "dist-sw-bldg-c-01", "target": "acc-sw-c-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-02", "target": "acc-sw-c-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-01", "target": "acc-sw-c-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-02", "target": "acc-sw-c-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-01", "target": "acc-sw-c-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-02", "target": "acc-sw-c-floor2-03", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-01", "target": "acc-sw-c-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "dist-sw-bldg-c-02", "target": "acc-sw-c-floor3-02", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "acc-sw-a-floor1-01", "target": "acc-sw-a-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor1-02", "target": "acc-sw-a-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor2-01", "target": "acc-sw-a-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor2-02", "target": "acc-sw-a-floor2-03", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "acc-sw-b-floor1-01", "target": "acc-sw-b-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor1-02", "target": "acc-sw-b-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor2-01", "target": "acc-sw-b-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor2-02", "target": "acc-sw-b-floor2-03", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "acc-sw-c-floor1-01", "target": "acc-sw-c-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor1-02", "target": "acc-sw-c-floor1-03", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor2-01", "target": "acc-sw-c-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor2-02", "target": "acc-sw-c-floor2-03", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "router-01", "target": "dmz-sw-01", "type": "ethernet", "speed": "10G"},
+    {"source": "router-02", "target": "dmz-sw-02", "type": "ethernet", "speed": "10G"},
+    {"source": "dmz-sw-01", "target": "dmz-sw-02", "type": "ethernet", "speed": "10G"},
+    
+    {"source": "core-sw-01", "target": "storage-sw-01", "type": "ethernet", "speed": "40G"},
+    {"source": "core-sw-02", "target": "storage-sw-02", "type": "ethernet", "speed": "40G"},
+    {"source": "storage-sw-01", "target": "storage-sw-02", "type": "ethernet", "speed": "40G"},
+    
+    {"source": "core-sw-01", "target": "wifi-controller-01", "type": "ethernet", "speed": "10G"},
+    {"source": "core-sw-02", "target": "wifi-controller-02", "type": "ethernet", "speed": "10G"},
+    
+    {"source": "acc-sw-a-floor1-01", "target": "ap-a-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor1-02", "target": "ap-a-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor2-01", "target": "ap-a-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor2-02", "target": "ap-a-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor3-01", "target": "ap-a-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-a-floor3-02", "target": "ap-a-floor3-02", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "acc-sw-b-floor1-01", "target": "ap-b-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor1-02", "target": "ap-b-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor2-01", "target": "ap-b-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor2-02", "target": "ap-b-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor3-01", "target": "ap-b-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-b-floor3-02", "target": "ap-b-floor3-02", "type": "ethernet", "speed": "1G"},
+    
+    {"source": "acc-sw-c-floor1-01", "target": "ap-c-floor1-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor1-02", "target": "ap-c-floor1-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor2-01", "target": "ap-c-floor2-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor2-02", "target": "ap-c-floor2-02", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor3-01", "target": "ap-c-floor3-01", "type": "ethernet", "speed": "1G"},
+    {"source": "acc-sw-c-floor3-02", "target": "ap-c-floor3-02", "type": "ethernet", "speed": "1G"}
+  ],
+  "vlans": [
+    {
+      "id": 1,
+      "name": "Default",
+      "description": "Default VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", "dist-sw-bldg-a-01", "dist-sw-bldg-a-02", 
+        "dist-sw-bldg-b-01", "dist-sw-bldg-b-02", "dist-sw-bldg-c-01", "dist-sw-bldg-c-02",
+        "acc-sw-a-floor1-01", "acc-sw-a-floor1-02", "acc-sw-a-floor1-03",
+        "acc-sw-a-floor2-01", "acc-sw-a-floor2-02", "acc-sw-a-floor2-03",
+        "acc-sw-a-floor3-01", "acc-sw-a-floor3-02",
+        "acc-sw-b-floor1-01", "acc-sw-b-floor1-02", "acc-sw-b-floor1-03",
+        "acc-sw-b-floor2-01", "acc-sw-b-floor2-02", "acc-sw-b-floor2-03",
+        "acc-sw-b-floor3-01", "acc-sw-b-floor3-02",
+        "acc-sw-c-floor1-01", "acc-sw-c-floor1-02", "acc-sw-c-floor1-03",
+        "acc-sw-c-floor2-01", "acc-sw-c-floor2-02", "acc-sw-c-floor2-03",
+        "acc-sw-c-floor3-01", "acc-sw-c-floor3-02",
+        "dmz-sw-01", "dmz-sw-02", "storage-sw-01", "storage-sw-02"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Management",
+      "description": "Network Management VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", "router-01", "router-02",
+        "dist-sw-bldg-a-01", "dist-sw-bldg-a-02", 
+        "dist-sw-bldg-b-01", "dist-sw-bldg-b-02", 
+        "dist-sw-bldg-c-01", "dist-sw-bldg-c-02",
+        "acc-sw-a-floor1-01", "acc-sw-a-floor1-02", "acc-sw-a-floor1-03",
+        "acc-sw-a-floor2-01", "acc-sw-a-floor2-02", "acc-sw-a-floor2-03",
+        "acc-sw-a-floor3-01", "acc-sw-a-floor3-02",
+        "acc-sw-b-floor1-01", "acc-sw-b-floor1-02", "acc-sw-b-floor1-03",
+        "acc-sw-b-floor2-01", "acc-sw-b-floor2-02", "acc-sw-b-floor2-03",
+        "acc-sw-b-floor3-01", "acc-sw-b-floor3-02",
+        "acc-sw-c-floor1-01", "acc-sw-c-floor1-02", "acc-sw-c-floor1-03",
+        "acc-sw-c-floor2-01", "acc-sw-c-floor2-02", "acc-sw-c-floor2-03",
+        "acc-sw-c-floor3-01", "acc-sw-c-floor3-02",
+        "dmz-sw-01", "dmz-sw-02", "storage-sw-01", "storage-sw-02",
+        "wifi-controller-01", "wifi-controller-02"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Servers",
+      "description": "Server Farm VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02",
+        "storage-sw-01", "storage-sw-02"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "WiFi-Corporate",
+      "description": "Corporate WiFi VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", 
+        "wifi-controller-01", "wifi-controller-02",
+        "ap-a-floor1-01", "ap-a-floor1-02",
+        "ap-a-floor2-01", "ap-a-floor2-02",
+        "ap-a-floor3-01", "ap-a-floor3-02",
+        "ap-b-floor1-01", "ap-b-floor1-02",
+        "ap-b-floor2-01", "ap-b-floor2-02",
+        "ap-b-floor3-01", "ap-b-floor3-02",
+        "ap-c-floor1-01", "ap-c-floor1-02",
+        "ap-c-floor2-01", "ap-c-floor2-02",
+        "ap-c-floor3-01", "ap-c-floor3-02"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "WiFi-Guest",
+      "description": "Guest WiFi VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", 
+        "wifi-controller-01", "wifi-controller-02",
+        "ap-a-floor1-01", "ap-a-floor1-02",
+        "ap-a-floor2-01", "ap-a-floor2-02",
+        "ap-a-floor3-01", "ap-a-floor3-02",
+        "ap-b-floor1-01", "ap-b-floor1-02",
+        "ap-b-floor2-01", "ap-b-floor2-02",
+        "ap-b-floor3-01", "ap-b-floor3-02",
+        "ap-c-floor1-01", "ap-c-floor1-02",
+        "ap-c-floor2-01", "ap-c-floor2-02",
+        "ap-c-floor3-01", "ap-c-floor3-02"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "VoIP",
+      "description": "Voice over IP VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", 
+        "dist-sw-bldg-a-01", "dist-sw-bldg-a-02", 
+        "dist-sw-bldg-b-01", "dist-sw-bldg-b-02", 
+        "dist-sw-bldg-c-01", "dist-sw-bldg-c-02",
+        "acc-sw-a-floor1-01", "acc-sw-a-floor1-02", "acc-sw-a-floor1-03",
+        "acc-sw-a-floor2-01", "acc-sw-a-floor2-02", "acc-sw-a-floor2-03",
+        "acc-sw-a-floor3-01", "acc-sw-a-floor3-02",
+        "acc-sw-b-floor1-01", "acc-sw-b-floor1-02", "acc-sw-b-floor1-03",
+        "acc-sw-b-floor2-01", "acc-sw-b-floor2-02", "acc-sw-b-floor2-03",
+        "acc-sw-b-floor3-01", "acc-sw-b-floor3-02",
+        "acc-sw-c-floor1-01", "acc-sw-c-floor1-02", "acc-sw-c-floor1-03",
+        "acc-sw-c-floor2-01", "acc-sw-c-floor2-02", "acc-sw-c-floor2-03",
+        "acc-sw-c-floor3-01", "acc-sw-c-floor3-02"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Corporate",
+      "description": "Corporate User VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02", 
+        "dist-sw-bldg-a-01", "dist-sw-bldg-a-02", 
+        "dist-sw-bldg-b-01", "dist-sw-bldg-b-02", 
+        "dist-sw-bldg-c-01", "dist-sw-bldg-c-02",
+        "acc-sw-a-floor1-01", "acc-sw-a-floor1-02", "acc-sw-a-floor1-03",
+        "acc-sw-a-floor2-01", "acc-sw-a-floor2-02", "acc-sw-a-floor2-03",
+        "acc-sw-a-floor3-01", "acc-sw-a-floor3-02",
+        "acc-sw-b-floor1-01", "acc-sw-b-floor1-02", "acc-sw-b-floor1-03",
+        "acc-sw-b-floor2-01", "acc-sw-b-floor2-02", "acc-sw-b-floor2-03",
+        "acc-sw-b-floor3-01", "acc-sw-b-floor3-02",
+        "acc-sw-c-floor1-01", "acc-sw-c-floor1-02", "acc-sw-c-floor1-03",
+        "acc-sw-c-floor2-01", "acc-sw-c-floor2-02", "acc-sw-c-floor2-03",
+        "acc-sw-c-floor3-01", "acc-sw-c-floor3-02"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "DMZ",
+      "description": "Demilitarized Zone VLAN",
+      "devices": [
+        "core-sw-01", "core-sw-02",
+        "router-01", "router-02",
+        "dmz-sw-01", "dmz-sw-02"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Building-A-Users",
+      "description": "Building A Users VLAN",
+      "devices": [
+        "dist-sw-bldg-a-01", "dist-sw-bldg-a-02",
+        "acc-sw-a-floor1-01", "acc-sw-a-floor1-02", "acc-sw-a-floor1-03",
+        "acc-sw-a-floor2-01", "acc-sw-a-floor2-02", "acc-sw-a-floor2-03",
+        "acc-sw-a-floor3-01", "acc-sw-a-floor3-02"
+      ]
+    },
+    {
+      "id": 110,
+      "name": "Building-B-Users",
+      "description": "Building B Users VLAN",
+      "devices": [
+        "dist-sw-bldg-b-01", "dist-sw-bldg-b-02",
+        "acc-sw-b-floor1-01", "acc-sw-b-floor1-02", "acc-sw-b-floor1-03",
+        "acc-sw-b-floor2-01", "acc-sw-b-floor2-02", "acc-sw-b-floor2-03",
+        "acc-sw-b-floor3-01", "acc-sw-b-floor3-02"
+      ]
+    },
+    {
+      "id": 120,
+      "name": "Building-C-Users",
+      "description": "Building C Users VLAN",
+      "devices": [
+        "dist-sw-bldg-c-01", "dist-sw-bldg-c-02",
+        "acc-sw-c-floor1-01", "acc-sw-c-floor1-02", "acc-sw-c-floor1-03",
+        "acc-sw-c-floor2-01", "acc-sw-c-floor2-02", "acc-sw-c-floor2-03",
+        "acc-sw-c-floor3-01", "acc-sw-c-floor3-02"
+      ]
+    },
+    {
+      "id": 200,
+      "name": "Printers-A",
+      "description": "Building A Printers VLAN",
+      "devices": [
+        "dist-sw-bldg-a-01", "acc-sw-a-floor1-01", 
+        "acc-sw-a-floor2-01", "acc-sw-a-floor3-01"
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Printers-B",
+      "description": "Building B Printers VLAN",
+      "devices": [
+        "dist-sw-bldg-b-01", "acc-sw-b-floor1-01", 
+        "acc-sw-b-floor2-01"
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Printers-C",
+      "description": "Building C Printers VLAN",
+      "devices": [
+        "dist-sw-bldg-c-02", "acc-sw-c-floor1-02", 
+        "acc-sw-c-floor3-02"
+      ]
+    },
+    {
+      "id": 300,
+      "name": "IoT-Bldg-A",
+      "description": "Building A IoT Devices",
+      "devices": [
+        "acc-sw-a-floor1-03", "acc-sw-a-floor2-03"
+      ]
+    },
+    {
+      "id": 301,
+      "name": "IoT-Bldg-B",
+      "description": "Building B IoT Devices",
+      "devices": [
+        "acc-sw-b-floor2-03", "acc-sw-b-floor3-02"
+      ]
+    },
+    {
+      "id": 302,
+      "name": "IoT-Bldg-C",
+      "description": "Building C IoT Devices",
+      "devices": [
+        "acc-sw-c-floor1-03"
+      ]
+    },
+    {
+      "id": 400,
+      "name": "Security-Cameras-A",
+      "description": "Building A Security Cameras",
+      "devices": [
+        "dist-sw-bldg-a-01", "acc-sw-a-floor1-02", 
+        "acc-sw-a-floor3-02"
+      ]
+    },
+    {
+      "id": 401,
+      "name": "Security-Cameras-B",
+      "description": "Building B Security Cameras",
+      "devices": [
+        "dist-sw-bldg-b-02", "acc-sw-b-floor1-03"
+      ]
+    },
+    {
+      "id": 402,
+      "name": "Security-Cameras-C",
+      "description": "Building C Security Cameras",
+      "devices": [
+        "acc-sw-c-floor2-03", "acc-sw-c-floor3-01"
+      ]
+    }
+  ]
+}

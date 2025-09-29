@@ -1,0 +1,88 @@
+{
+  "vlans_with_islands": [
+    {
+      "vlan_id": 1,
+      "vlan_name": "Default",
+      "number_of_islands": 2,
+      "islands": [
+        {
+          "island_id": 1,
+          "devices": [
+            "acc-sw-b-floor1",
+            "acc-sw-b-floor2"
+          ]
+        },
+        {
+          "island_id": 2,
+          "devices": [
+            "acc-sw-a-floor1",
+            "acc-sw-a-floor2",
+            "core-sw-01",
+            "core-sw-02",
+            "dist-sw-bldg-a",
+            "dist-sw-bldg-b"
+          ]
+        }
+      ]
+    },
+    {
+      "vlan_id": 30,
+      "vlan_name": "WiFi-Corporate",
+      "number_of_islands": 5,
+      "islands": [
+        {
+          "island_id": 1,
+          "devices": [
+            "ap-a-02"
+          ]
+        },
+        {
+          "island_id": 2,
+          "devices": [
+            "ap-b-02"
+          ]
+        },
+        {
+          "island_id": 3,
+          "devices": [
+            "ap-a-01"
+          ]
+        },
+        {
+          "island_id": 4,
+          "devices": [
+            "core-sw-01",
+            "core-sw-02",
+            "wifi-controller"
+          ]
+        },
+        {
+          "island_id": 5,
+          "devices": [
+            "ap-b-01"
+          ]
+        }
+      ]
+    },
+    {
+      "vlan_id": 200,
+      "vlan_name": "User-VLAN-B",
+      "number_of_islands": 2,
+      "islands": [
+        {
+          "island_id": 1,
+          "devices": [
+            "acc-sw-b-floor1",
+            "acc-sw-b-floor2"
+          ]
+        },
+        {
+          "island_id": 2,
+          "devices": [
+            "dist-sw-bldg-b"
+          ]
+        }
+      ]
+    }
+  ]
+}
